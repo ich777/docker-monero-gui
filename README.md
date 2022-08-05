@@ -1,5 +1,5 @@
 # Monero-GUI in Docker optimized for Unraid
-Monero-GUI is a Dockerized GUI Monero Wallet.
+Monero-GUI is a simple but yet powerfull Monero Wallet.
 
 **ATTENTION:** By default your wallet is saved in ../Monero/wallet (please don't store your Wallet in the .../bin directory since it get's deleted after a update is released)
 I strongly recommend you to backup your keyfile on a regular basis!
