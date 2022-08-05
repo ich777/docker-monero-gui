@@ -76,9 +76,6 @@ echo "---Starting noVNC server---"
 websockify -D --web=/usr/share/novnc/ --cert=/etc/ssl/novnc.pem ${NOVNC_PORT} localhost:${RFB_PORT}
 sleep 2
 
-echo "---Container under construction!---"
-sleep infinity
-
 echo "---Starting Monero-GUI---"
 cd ${DATA_DIR}
 ${DATA_DIR}/bin/monero-wallet-gui
