@@ -5,7 +5,7 @@ LABEL org.opencontainers.image.authors="admin@minenet.at"
 
 RUN export TZ=Europe/Rome && \
 	apt-get update && \
-	apt-get -y install --no-install-recommends jq && \
+	apt-get -y install --no-install-recommends jq bzip2 libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-randr0-dev libxcb-render-util0 libxcb-shape0 libxcb-xkb1 libxkbcommon-x11-0 && \
     sed -i '/    document.title =/c\    document.title = "MoneroGUI - noVNC";' /usr/share/novnc/app/ui.js && \
 	rm /usr/share/novnc/app/images/icons/*
 
