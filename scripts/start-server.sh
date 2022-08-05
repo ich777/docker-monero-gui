@@ -57,7 +57,7 @@ if [ "${CUSTOM_RES_H}" -le 1023 ]; then
 fi
 
 echo "---Checking for old display lock files---"
-rm -rf /tmp/.X99*
+rm -rf /tmp/.X0*
 rm -rf /tmp/.X11*
 rm -rf /tmp/xmr*
 rm -rf ${DATA_DIR}/.vnc/*.log ${DATA_DIR}/.vnc/*.pid
