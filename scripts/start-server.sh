@@ -3,7 +3,7 @@ export DISPLAY=:0
 export XAUTHORITY=${DATA_DIR}/.Xauthority
 
 LAT_V="$(wget -qO- https://api.github.com/repos/monero-project/monero-gui/releases/latest | jq -r '.tag_name')"
-CUR_V="$(find ${DATA_DIR}/bin -maxdepth 1 -type f -name "monero-guiv_*" 2>/dev/null | cut -d '_' -f2)"
+CUR_V="$(find ${DATA_DIR}/bin -maxdepth 1 -type f -name "monero-gui_*" 2>/dev/null | cut -d '_' -f2)"
 
 if [ -z "${LAT_V}" ]; then
   if [ -z "${CUR_V}" ]; then
@@ -30,7 +30,7 @@ if [ -z "${CUR_V}" ]; then
   rm -rf ${DATA_DIR}/monero-gui_${LAT_V}.tar.bz2
   touch ${DATA_DIR}/bin/monero-guiv_${LAT_V}
 elif [ "${CUR_V}" != "${LAT_V}" ]; then
-  echo "---Version missmatch, installed v${CUR_V}, downloading and installing latest v${LAT_V}...---"
+  echo "---Version missmatch, installed ${CUR_V}, downloading and installing latest ${LAT_V}...---"
   cd ${DATA_DIR}
   rm -rf ${DATA_DIR}/bin
   if wget -q -nc --show-progress --progress=bar:force:noscroll -O ${DATA_DIR}/monero-gui_${LAT_V}.tar.bz2 "https://downloads.getmonero.org/gui/monero-gui-linux-x64-${LAT_V}.tar.bz2" ; then
@@ -42,9 +42,9 @@ elif [ "${CUR_V}" != "${LAT_V}" ]; then
   mkdir -p ${DATA_DIR}/bin
   tar -C ${DATA_DIR}/bin --strip-components=1 -xvf ${DATA_DIR}/monero-gui_${LAT_V}.tar.bz2
   rm -rf ${DATA_DIR}/monero-gui_${LAT_V}.tar.bz2
-  touch ${DATA_DIR}/bin/monero-guiv_${LAT_V}
+  touch ${DATA_DIR}/bin/monero-gui_${LAT_V}
 elif [ "${CUR_V}" == "${LAT_V}" ]; then
-	echo "---Monero-GUI v$CUR_V up-to-date---"
+	echo "---Monero-GUI $CUR_V up-to-date---"
 fi
 
 if [ "${CUSTOM_RES_W}" -le 1279 ]; then
