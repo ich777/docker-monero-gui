@@ -22,7 +22,7 @@ docker run --name Monero-GUI -d \
 	--env 'GID=100' \
 	--env 'UMASK=000' \
 	--env 'DATA_PERM=770' \
-    --env 'TURBOVNC_PARAMS=-securitytypes none' \
+	--env 'TURBOVNC_PARAMS=-securitytypes none' \
 	--volume /path/to/monero-gui:/monero \
 	--restart=unless-stopped \
 	ich777/monero-gui
