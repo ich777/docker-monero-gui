@@ -28,7 +28,7 @@ if [ -z "${CUR_V}" ]; then
   mkdir -p ${DATA_DIR}/bin
   tar -C ${DATA_DIR}/bin --strip-components=1 -xvf ${DATA_DIR}/monero-gui_${LAT_V}.tar.bz2
   rm -rf ${DATA_DIR}/monero-gui_${LAT_V}.tar.bz2
-  touch ${DATA_DIR}/bin/monero-guiv_${LAT_V}
+  touch ${DATA_DIR}/bin/monero-gui_${LAT_V}
 elif [ "${CUR_V}" != "${LAT_V}" ]; then
   echo "---Version missmatch, installed ${CUR_V}, downloading and installing latest ${LAT_V}...---"
   cd ${DATA_DIR}
