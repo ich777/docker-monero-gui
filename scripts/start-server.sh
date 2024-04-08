@@ -15,6 +15,8 @@ if [ -z "${LAT_V}" ]; then
   fi
 fi
 
+rm -rf ${DATA_DIR}/monero-gui*.tar.bz2
+
 echo "---Version Check---"
 if [ -z "${CUR_V}" ]; then
   echo "---Monero-GUI not installed, installing...---"
